@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elegance, Held Forever — Fine Jewellery Demo</title>
+<meta name="description" content="Anonymous demonstration of a luxury jewellery website with a scroll-controlled exploded-view animation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <a class="emblem" href="#home" aria-label="Home">
+    <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true"><use href="#emb"/></svg>
+  </a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  <nav id="menu" aria-label="Primary">
+    <a href="#home">Home</a><a href="#collections">Collections</a><a href="#craft">Craftsmanship</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3D59B"/><stop offset=".5" stop-color="#D7AD58"/><stop offset="1" stop-color="#9c7326"/></linearGradient>
+    <g id="emb" fill="none" stroke="url(#gg)" stroke-width="1.6"><circle cx="20" cy="20" r="17"/><path d="M20 5l11 15-11 15L9 20z"/><path d="M9 20h22M20 5v30" stroke-width=".8"/></g>
+  </defs>
+</svg>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-word" aria-hidden="true">JEWELLERY</div>
+  <div class="hero-copy">
+    <h1>Elegance,<br>Held Forever.</h1>
+    <p>Discover extraordinary jewellery where timeless artistry meets contemporary elegance.</p>
+    <div class="btns"><a class="btn gold" href="#collections">EXPLORE COLLECTION</a><a class="btn ghost" href="#craft">DISCOVER THE STORY</a></div>
+  </div>
+  <div class="hero-art"><img data-art="bracelet" alt="Gold bracelet set with emerald-cut gemstones" width="640" height="640"></div>
+  <aside class="glass card-a"><img data-art="earrings" alt="" width="56" height="56"><span>Radiant<br>Bloom</span><b aria-hidden="true">+</b></aside>
+  <aside class="glass card-b"><span>Hand-finished<br>in solid gold</span><small>Demonstration content</small></aside>
+  <div class="chain" aria-hidden="true"></div>
+</section>
+
+<!-- SIGNATURE SCROLL ANIMATION -->
+<section class="seq" id="craft" aria-label="Exploded view of a gold bracelet">
+  <div class="stage">
+    <canvas id="cv" aria-label="Gold bracelet separating into its components as you scroll" role="img"></canvas>
+    <img id="fallback" data-art="bracelet" alt="Gold bracelet" hidden>
+    <div class="loader" id="loader" role="status"><i></i><span id="loadTxt">Preparing the experience… 0%</span></div>
+    <p class="notice" id="notice" hidden>Animation frames not found. Add them to <code>/frames/</code> to enable the scroll sequence.</p>
+    <div class="txt intro" id="tIntro"><h2>More Than Jewellery.</h2><p>Every detail tells a story. Every element has a purpose.</p></div>
+    <div class="prog" id="prog"><span>THE ART OF DETAIL</span><div><i id="progBar"></i></div></div>
+    <div class="txt outro" id="tOutro"><h2>Beauty, Revealed.</h2><p>An intricate expression of timeless design.</p></div>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section class="sec light" id="collections">
+  <div class="head"><h2>Our Creations</h2><p>Explore a curated world of timeless elegance.</p></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<!-- EDITORIAL -->
+<section class="sec editorial">
+  <div class="ed-img reveal"><img data-art="statement" alt="Ornate gold statement jewellery on emerald" loading="lazy" width="600" height="700"></div>
+  <div class="ed-copy reveal">
+    <h2>Beauty in Every Detail.</h2>
+    <p>Each piece begins as a sketch and ends as an heirloom. Links are shaped, stones are set by eye, and every surface is polished until it holds the light.</p>
+    <p>This is placeholder editorial copy for demonstration; replace it with the shop's own story.</p>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="sec light" id="featured">
+  <div class="head"><h2>Featured Collection</h2><p>Demonstration pieces only. Not available for purchase.</p></div>
+  <div class="products" id="products"></div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec" id="gallery">
+  <div class="head dark"><h2>Gallery</h2><p>Close-ups, gemstones and fine gold.</p></div>
+  <div class="gal" id="gal"></div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="chain" aria-hidden="true"></div>
+  <svg viewBox="0 0 40 40" width="64" height="64" aria-hidden="true"><use href="#emb"/></svg>
+  <h2>Elegance, Held Forever.</h2>
+  <button class="btn gold" id="enqBtn">ENQUIRE</button>
+  <nav aria-label="Footer"><a href="#home">Home</a><a href="#collections">Collections</a><a href="#craft">Craftsmanship</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav>
+  <small>Anonymous design demonstration. No real business or contact details.</small>
+</footer>
+
+<dialog id="pm" aria-labelledby="pmT"><button class="x" data-close aria-label="Close">×</button><div class="pm"><img id="pmI" alt="" width="360" height="360"><div><h3 id="pmT"></h3><p id="pmP" class="price"></p><p id="pmD"></p><ul id="pmL"></ul><small>Demonstration product. Not for sale.</small></div></div></dialog>
+
+<dialog id="lb" aria-label="Image viewer"><button class="x" data-close aria-label="Close">×</button><button class="nv p" id="lbP" aria-label="Previous">‹</button><img id="lbI" alt=""><button class="nv n" id="lbN" aria-label="Next">›</button><p id="lbC"></p></dialog>
+
+<dialog id="eq" aria-labelledby="eqT"><button class="x" data-close aria-label="Close">×</button>
+  <form id="eqF" class="eq"><h3 id="eqT">Demonstration enquiry</h3>
+    <label>Name<input required autocomplete="off"></label><label>Email<input type="email" required autocomplete="off"></label><label>Message<textarea rows="3"></textarea></label>
+    <button class="btn gold" type="submit">SEND</button><p id="eqM" role="status">This is a demo form. Nothing is sent.</p></form></dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
